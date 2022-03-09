@@ -113,12 +113,23 @@ const icons = [
 	}
 ];
 
+let options = ['all'];
 icons.forEach(element =>{
 	element.color = Math.floor(Math.random()*16777215).toString(16);
+	if (!options.includes(element.type)){
+		options.push(element.type);
+	}
 });
 
 const iconsContainer = document.body.querySelector('main');
 const filter = document.body.querySelector('#js-select');
+filter.style.textTransform = 'capitalize';
+
+options.forEach((element, index) => {
+	filter.innerHTML += `<option value=${index}>${element}</option>`
+})
+
+
 
 const animalList = [];
 const vegetableList = [];
@@ -150,7 +161,7 @@ filter.addEventListener('change', generatePanlesByFilter);
 
 
 function generatePanlesByFilter(){
-	const choice = parseInt(filter.value);
+	const choice = filter.value;
 
 	lists.forEach((element, index) => {
 		if (choice == index){
