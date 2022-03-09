@@ -1,0 +1,30 @@
+:root{
+    --headerEleHeight: 4rem;
+}
+.header-top{
+    height: var(--headerEleHeight);
+    color: blue;
+}
+
+.header-bot{
+    height: var(--headerEleHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.filter-label{
+    text-transform: uppercase;
+    margin-right: .5rem;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.main-element{
+    padding: 1rem 2rem;
+}
