@@ -116,15 +116,32 @@ const icons = [
 const iconsContainer = document.body.querySelector('main');
 const filter = document.body.querySelector('#js-select');
 
-const animalList = icons.filter((element) =>{
-	return element.type == 'animal';
+const animalList = [];
+const vegetableList = [];
+const userlList = [];
+
+icons.map(element =>{
+	switch (element.type){
+		case 'animal':
+			animalList.push(element);
+			break;
+		case 'vegetable':
+			vegetableList.push(element);
+			break;
+		case 'user':
+			userlList.push(element);
+	}
 });
-const vegetableList = icons.filter((element) =>{
-	return element.type == 'vegetable';
-});
-const userlList = icons.filter((element) =>{
-	return element.type == 'user';
-});
+
+// const animalList = icons.filter((element) =>{
+// 	return element.type == 'animal';
+// });
+// const vegetableList = icons.filter((element) =>{
+// 	return element.type == 'vegetable';
+// });
+// const userlList = icons.filter((element) =>{
+// 	return element.type == 'user';
+// });
 
 // filter.addEventListener('load', generatePanlesByFilter);
 window.addEventListener('load', generatePanlesByFilter);
