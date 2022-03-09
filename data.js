@@ -124,10 +124,14 @@ icons.forEach(element => {
 	panel.style.textAlign = 'center';
 	panel.style.backgroundColor = 'lightgrey';
 	panel.style.borderRadius = '1rem';
+
 	panel.innerHTML = `
 	<i class="${element.family} ${element.prefix}${element.name}"></i>
 	<span>${element.name}</span>
 	`;
+
+	const icon = panel.querySelector('i');
+	icon.style.color = `${element.color}`
 
 	iconsContainer.appendChild(panel);
 });
