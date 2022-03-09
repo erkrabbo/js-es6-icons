@@ -1,9 +1,19 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 :root{
-    --headerEleHeight: 4rem;
+    --headerEleHeight: 3rem;
 }
 .header-top{
     height: var(--headerEleHeight);
     color: blue;
+
+    display: flex;
+    align-items: end;
 }
 
 .header-bot{
@@ -18,13 +28,25 @@
     text-transform: uppercase;
     margin-right: .5rem;
 }
-
 main{
+    max-width: 600px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+
+    padding: 1rem;
+    margin: 0 auto;
 }
 
 .main-element{
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-size: .8rem;
+    margin: .2rem;  
 }

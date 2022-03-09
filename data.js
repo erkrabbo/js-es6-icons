@@ -113,7 +113,8 @@ const icons = [
 	}
 ];
 
-let options = ['all'];
+const options = ['all'];
+
 icons.forEach(element =>{
 	element.color = Math.floor(Math.random()*16777215).toString(16);
 	if (!options.includes(element.type)){
@@ -169,15 +170,7 @@ function generatePanlesByFilter(){
 
 			element.forEach(element => {
 				const panel = document.createElement('div');
-			
 				panel.classList.add('main-element');
-				panel.style.display = 'flex';
-				panel.style.flexDirection = 'column';
-				panel.style.textAlign = 'center';
-				panel.style.backgroundColor = 'lightgrey';
-				panel.style.borderRadius = '1rem';
-				panel.style.textTransform = 'uppercase';
-				panel.style.fontSize = '.8rem';
 			
 				panel.innerHTML = `
 				<i class="${element.family} ${element.prefix}${element.name}"></i>
