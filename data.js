@@ -113,6 +113,10 @@ const icons = [
 	}
 ];
 
+icons.forEach(element =>{
+	element.color = Math.floor(Math.random()*16777215).toString(16);
+});
+
 const iconsContainer = document.body.querySelector('main');
 const filter = document.body.querySelector('#js-select');
 
@@ -161,6 +165,8 @@ function generatePanlesByFilter(){
 				panel.style.textAlign = 'center';
 				panel.style.backgroundColor = 'lightgrey';
 				panel.style.borderRadius = '1rem';
+				panel.style.textTransform = 'uppercase';
+				panel.style.fontSize = '.8rem';
 			
 				panel.innerHTML = `
 				<i class="${element.family} ${element.prefix}${element.name}"></i>
@@ -168,7 +174,8 @@ function generatePanlesByFilter(){
 				`;
 			
 				const icon = panel.querySelector('i');
-				icon.style.color = `${element.color}`
+				icon.style.color = `#${element.color}`;
+				icon.style.fontSize = '2rem';
 			
 				iconsContainer.appendChild(panel);
 				});
